@@ -55,6 +55,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding-right: 17px;
+  margin-right: 40px;
 }
 
 .input-search {
@@ -84,7 +85,6 @@ body {
   display: flex;
   align-items: center;
   margin-left: auto;
-  cursor: pointer;
 }
 
 .icons_link {
@@ -110,9 +110,10 @@ body {
   border-radius: 50%;
 }
 
+/*  */
 .sidebar {
   position: fixed;
-  width: 12%;
+  width: 230px;
   left: 0;
   top: 114px;
   height: calc(100% - 114px);
@@ -125,8 +126,9 @@ body {
   width: 100%;
   height: 400px;
   margin-top: 85px;
-  padding-left: 13%;
+  padding-left: 250px;
   padding-top: 30px;
+  padding-right: 70px;
 }
 
 .nav-menu {
@@ -203,12 +205,8 @@ body {
   margin-left: 20px;
 }
 
-.video-card {
-  display: block;
-  margin-right: 40px;
-}
-
 .video-thumb {
+  width: 100%;
   height: 150px;
   overflow: hidden;
   border-radius: 14px;
@@ -216,7 +214,7 @@ body {
 }
 
 .thumbnail {
-  width: 250px;
+  width: 100%;
   height: 150px;
   object-fit: cover;
 }
@@ -272,7 +270,7 @@ body {
 
 .slider-buttons {
   position: absolute;
-  right: 12%;
+  right: 10%;
   top: 15px;
   display: flex;
   align-items: center;
@@ -284,8 +282,8 @@ body {
   cursor: pointer;
 }
 
-.channel-food-button {
-  cursor: pointer;
+.channel-button:hover {
+  opacity: 0.5;
 }
 
 .recommended {
@@ -314,12 +312,8 @@ body {
   width: 66px;
 }
 
-.recommended-video-card {
-  display: block;
-  margin-right: 40px;
-}
-
 .recommended-video-thumb {
+  width: 100%;
   height: 250px;
   overflow: hidden;
   border-radius: 14px;
@@ -327,7 +321,7 @@ body {
 }
 
 .recommended-thumbnail {
-  width: 540px;
+  width: 100%;
   height: 250px;
   object-fit: cover;
 }
@@ -362,6 +356,7 @@ body {
 }
 
 .channel-food-title-text {
+  width: 180px;
   margin: 0 20px;
 }
 
@@ -388,6 +383,11 @@ body {
   text-align: center;
   color: #ffffff;
   border: none;
+  cursor: pointer;
+}
+
+.food-btn-submit:hover {
+  opacity: 0.7;
 }
 
 .channel-food-slider-buttons {
@@ -400,20 +400,166 @@ body {
   width: 66px;
 }
 
-.food-video-card {
-  display: block;
-  margin-right: 40px;
-}
-
 .food-video-thumb {
+  width: 100%;
   height: 150px;
   overflow: hidden;
   border-radius: 14px;
   position: relative;
 }
-
+.video-thumb {
+  cursor: pointer;
+}
+.recommended-video-thumb {
+  cursor: pointer;
+}
+.channel-food-slider-buttons {
+  cursor: pointer;
+}
+.food-video-thumb {
+  cursor: pointer;
+}
 .food-thumbnail {
-  width: 250px;
+  width: 100%;
   height: 150px;
   object-fit: cover;
+}
+
+.mobile-sidebar {
+  display: none;
+}
+
+.mobile-search {
+  display: none;
+}
+
+@media (max-width: 1200px) {
+  .food-btn-submit {
+    width: 100px;
+    font-size: 14px;
+    line-height: 18px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .channel-food-subtitle-text {
+    display: none;
+  }
+  .food-btn-submit {
+    margin-right: 30px;
+  }
+}
+
+@media (max-width: 860px) {
+  .icons {
+    display: none;
+  }
+  .user {
+    margin-left: auto;
+  }
+  .food-btn-submit {
+    margin-right: 10px;
+  }
+  .slider-buttons {
+    right: 5%;
+    width: 60px;
+  }
+}
+
+@media (max-width: 800px) {
+  .food-btn-submit {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .recommended-slider-buttons {
+    display: none;
+  }
+  .channel-food-slider-buttons {
+    display: none;
+  }
+  .swiper-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  .swiper-slide {
+    margin-bottom: 40px;
+  }
+  .video-thumb {
+    width: 100%;
+    height: 150px;
+  }
+  .recommended-video-thumb {
+    height: 150px;
+  }
+  .slider-buttons {
+    display: none;
+  }
+  .mobile-search {
+    display: block;
+    margin-left: auto;
+  }
+  .input-group {
+    position: fixed;
+    top: -100px;
+    left: 0;
+    opacity: 0;
+    width: 71%;
+    margin-left: 25px;
+    transition: top 0.2s;
+  }
+  .input-group.is-open {
+    top: 20px;
+    opacity: 1;
+  }
+
+  .user {
+    margin-left: 25px;
+  }
+  .menu-button {
+    display: none;
+  }
+  .sidebar {
+    display: none;
+  }
+  .content {
+    padding-left: 32px;
+  }
+  .mobile-sidebar {
+    display: block;
+    position: fixed;
+    z-index: 99;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+  }
+  .mobile-sidebar .nav-link {
+    display: flex;
+    flex-direction: column;
+  }
+  .mobile-sidebar .nav-menu {
+    margin-bottom: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 13px;
+    padding-bottom: 11px;
+    border-top: 1px solid #f1f1f1;
+  }
+  .mobile-sidebar .nav-text {
+    margin-left: 0;
+    font-size: 10px;
+    line-height: 13px;
+  }
+  .mobile-sidebar .nav-item {
+    margin-bottom: 0;
+  }
+  .channel-food-subtitle-text {
+    display: none;
+  }
+  .food-btn-submit {
+    width: 130px;
+  }
 }
